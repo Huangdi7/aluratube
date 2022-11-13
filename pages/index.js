@@ -1,7 +1,6 @@
 import React from "react"
 import config from "../config.json"
 import styled from "styled-components"
-import { CSSReset } from "../src/components/CSSReset"
 import Menu from "../src/components/Menu"
 import { StyledTimeline } from "../src/components/Timeline"
 
@@ -9,7 +8,6 @@ function HomePage(){
     const [valorDoFiltro, setValorDoFiltro] = React.useState("");
     return (
         <>
-            <CSSReset/>
             <div style={{
                 display: "flex",
                 flexDirection: "column",
@@ -42,6 +40,7 @@ const StyledHeader = styled.div`
     }
 `;
 const StyledBanner = styled.div`
+    background-color: ${({ theme }) => theme.backgroundLevel1};
     background-image: url(${({ bg }) => bg});
     height: 230px;
 `
@@ -94,4 +93,3 @@ function Timeline({searchValue, ...props}) {
         </StyledTimeline>
     )
 }
-
